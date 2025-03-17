@@ -1,0 +1,9 @@
+services:
+  jupyter:
+    container_name: jupyter
+    image: jupyter/minimal-notebook:latest
+    ports:
+      - 8889:8888
+    volumes:
+      - ./jupyter-data:/home/jovyan/work
+    command: start-notebook.py --NotebookApp.token='my-token' --NotebookApp.password='Prueba1' --ServerApp.base_url /jupyter/
